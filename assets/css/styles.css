@@ -14,17 +14,12 @@
   --first-color: hsl(var(--hue-color), 64%, 22%);
   --first-color-second: hsl(var(--hue-color), 64%, 22%);
   --first-color-alt: hsl(var(--hue-color), 64%, 15%);
-
   --title-color: hsl(var(--hue-color), 64%, 18%);
-
   --text-color: hsl(var(--hue-color), 24%, 35%);
   --text-color-light: hsl(var(--hue-color), 8%, 60%);
-
   --input-color: hsl(var(--hue-color), 24%, 97%);
   --body-color: hsl(var(--hue-color), 100%, 99%);
-
   --white-color: #fff;
-
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
 
@@ -61,11 +56,9 @@
   --img-transition: 0.3s;
   --img-hidden: hidden;
   --img-scale: scale(1.1);
-  /* scale() : 마우스 올렸을 때 확대됨 */
 }
 
 @media screen and (min-width: 968px) {
-  /* 웹 창이 최소 968px 이상으로 커졌을 때! 아래 폰트사이즈 적용...  모바일일때보다 째끔씩 커짐.*/
   :root {
     --biggest-font-size: 4rem;
     --h1-font-size: 2.25rem;
@@ -75,6 +68,41 @@
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.813rem;
   }
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --first-color-second: hsl(var(--hue-color), 54%, 12%);
+  --title-color: hsl(var(--hue-color), 24%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 29%, 12%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+}
+
+/*========== Button Dark/Light ==========*/
+.nav__dark {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  position: absolute;
+  left: 3rem;
+  bottom: 4rem;
+}
+
+.change-theme,
+.change-theme-name {
+  color: var(--text-color);
+}
+
+.change-theme {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.change-theme-name {
+  font-size: var(--small-font-size);
 }
 
 /*=============== BASE ===============*/
@@ -89,7 +117,6 @@ html {
 }
 
 body {
-  /* 전체 바디 폰트, 배경색깔, 마진탑 */
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -100,7 +127,6 @@ body {
 h1,
 h2,
 h3 {
-  /* 제목부분 폰트컬러, 볼드함, 폰트체 */
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
   font-family: var(--title-font);
@@ -135,9 +161,12 @@ input {
   outline: none;
 }
 
+.main {
+  overflow-x: hidden;
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
-  /* 상하 부분만 패딩 */
   padding: 4.5rem 0 2.5rem;
 }
 
@@ -145,15 +174,12 @@ input {
   font-size: var(--h2-font-size);
   color: var(--title-color);
   text-align: center;
-  /* 단어의 첫글자를 대문자로 바꾸는 속성(아래) */
   text-transform: capitalize;
   margin-bottom: var(--mb-2);
 }
 
 .container {
-  /* 최대로 무한정 커지지 않게... media쿼리의 최소값이 여기선 최대값 */
   max-width: 968px;
-  /* 좌우 마진 */
   margin-left: var(--mb-1);
   margin-right: var(--mb-1);
 }
@@ -162,8 +188,6 @@ input {
   display: grid;
   gap: 1.5rem;
 }
-
-/* ********************여기까지 환경세팅!!!!! *****************/
 
 /*=============== HEADER ===============*/
 .header {
@@ -175,6 +199,7 @@ input {
   background-color: transparent;
 }
 
+/*=============== NAV ===============*/
 .nav {
   height: var(--header-height);
   display: flex;
@@ -205,7 +230,6 @@ input {
     position: fixed;
     background-color: var(--body-color);
     top: 0;
-    /* right 값은 초기엔 -100% */
     right: -100%;
     width: 70%;
     height: 100%;
@@ -240,9 +264,36 @@ input {
   cursor: pointer;
 }
 
+/* show menu */
 .show-menu {
-  /* 기본값 -100% 였는데 이제 0으로 바뀌면서 랜더링에 보이게 됨! */
   right: 0;
+}
+
+/* Change background header */
+.scroll-header {
+  background-color: var(--body-color);
+  box-shadow: 0 0 4px rgba(14, 55, 63, 0.15);
+}
+
+.scroll-header .nav__logo,
+.scroll-header .nav__toggle {
+  color: var(--title-color);
+}
+
+/* Active link */
+.active-link {
+  position: relative;
+  color: var(--title-color);
+}
+
+.active-link::before {
+  content: "";
+  position: absolute;
+  background-color: var(--title-color);
+  width: 100%;
+  height: 2px;
+  bottom: -0.75rem;
+  left: 0;
 }
 
 /*=============== HOME ===============*/
@@ -250,10 +301,8 @@ input {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100vh;
-
   object-fit: cover;
   object-position: 83%;
 }
@@ -359,4 +408,87 @@ input {
 
 .button--link:hover {
   background: none;
+}
+
+/*=============== ABOUT ===============*/
+.about__data {
+  text-align: center;
+}
+
+.about__container {
+  row-gap: 2.5rem;
+}
+
+.about__description {
+  margin-bottom: var(--mb-2);
+}
+
+.about__img {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__img-overlay {
+  overflow: var(--img-hidden);
+}
+
+.about__img-one {
+  width: 130px;
+}
+
+.about__img-two {
+  width: 180px;
+}
+
+.about__img-one,
+.about__img-two {
+  transition: var(--img-transition);
+}
+
+.about__img-one:hover,
+.about__img-two:hover {
+  transform: var(--img-scale);
+}
+
+/*=============== DISCOVER ===============*/
+.discover__card {
+  position: relative;
+  width: 200px;
+  overflow: var(--img-hidden);
+}
+
+.discover__data {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1rem;
+}
+
+.discover__title,
+.discover__description {
+  color: var(--white-color);
+}
+
+.discover__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+
+.discover__description {
+  display: block;
+  font-size: var(--smaller-font-size);
+}
+
+.discover__img {
+  transition: var(--img-transition);
+}
+
+.discover__img:hover {
+  transform: var(--img-scale);
+}
+
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  background-image: none;
 }

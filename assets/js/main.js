@@ -27,3 +27,28 @@ function linkAction(){
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+/*==================== CHANGE BACKGROUND HEADER. 스크롤 할 때 어느순간 navbar 배경이 흰색으로 변경 ====================*/
+function scrollHeader(){
+  const header = document.getElementById('header')
+  // When the scroll is greater than 100 viewport height, add the scroll-header class to the header tag
+  if(this.scrollY >= 100){ 
+    header.classList.add('scroll-header');
+   } else { 
+     header.classList.remove('scroll-header')
+   }
+}
+window.addEventListener('scroll', scrollHeader)
+
+
+var swiper = new Swiper(".discover__container", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
+  spaceBetween: 32,
+  coverflowEffect: {
+    rotate: 0
+  }
+});
