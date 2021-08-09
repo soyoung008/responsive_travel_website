@@ -287,12 +287,13 @@ input {
 }
 
 .active-link::before {
+  /* 가상요소 before */
   content: "";
   position: absolute;
   background-color: var(--title-color);
   width: 100%;
   height: 2px;
-  bottom: -0.75rem;
+  bottom: -0.5rem;
   left: 0;
 }
 
@@ -706,4 +707,114 @@ input {
 
 .sponsor__img:hover {
   filter: invert(0.5);
+}
+
+/*=============== SPONSORS ===============*/
+
+.footer__container {
+  row-gap: 5rem;
+}
+
+.footer__content {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  row-gap: 2rem;
+}
+
+.footer__title,
+.footer__subtitle {
+  font-size: var(--h3-font-size);
+}
+
+.footer__title {
+  margin-bottom: var(--mb-0-5);
+}
+
+.footer__description {
+  margin-bottom: var(--mb-2);
+}
+.footer__social {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  margin-right: var(--mb-1-25);
+}
+
+.footer__subtitle {
+  margin-bottom: var(--mb-1);
+}
+
+.footer__item {
+  margin-bottom: var(--mb-0-75);
+}
+
+.footer__link {
+  color: var(--text-color);
+}
+
+.footer__link:hover {
+  color: var(--title-color);
+}
+
+.footer__rights {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  text-align: center;
+}
+
+.footer__copy,
+.footer__terms-link {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.footer__terms {
+  display: flex;
+  column-gap: 1.5rem;
+  justify-content: center;
+}
+
+.footer__terms-link:hover {
+  color: var(--text-color);
+}
+
+/*========== SCROLL UP ==========*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background-color: var(--first-color);
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  /* opacity: 0.9; */
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+}
+
+.scrollup__icon {
+  color: var(--white-color);
+  font-size: 1.2rem;
+}
+
+.scrollup:hover {
+  background-color: var(--first-color-alt);
+  opacity: 1;
+}
+
+.show-scroll {
+  bottom: 5rem;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-color-light);
 }
