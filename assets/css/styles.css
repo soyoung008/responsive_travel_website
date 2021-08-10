@@ -820,3 +820,61 @@ input {
 }
 
 /*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .place__container {
+    grid-template-columns: max-content;
+    justify-content: center;
+  }
+  .experience__content {
+    padding: 0;
+  }
+  .experience__overlay:nth-child(1) {
+    width: 190px;
+  }
+  .experience__overlay:nth-child(2) {
+    width: 80px;
+  }
+  .home__info {
+    width: 190px;
+    padding: 1rem;
+  }
+
+  .home__info-title {
+    font-size: 0.6rem;
+    margin-bottom: var(--mb-0-5);
+  }
+
+  .home__info-button {
+    font-size: 0.6rem;
+  }
+
+  .experience__img,
+  .video__container {
+    padding: 0;
+  }
+
+  .subscribe__form .button {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 568px) {
+  .video__container {
+    display: grid;
+    grid-template-columns: 0.6fr;
+    justify-content: center;
+  }
+  .place__container {
+    grid-template-columns: repeat(3, max-content);
+  }
+  .subscribe__form {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
