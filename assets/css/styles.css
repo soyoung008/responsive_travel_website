@@ -877,4 +877,121 @@ input {
 }
 
 @media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .nav__link {
+    color: var(--white-color);
+    text-transform: initial;
+  }
+
+  .nav__dark {
+    position: initial;
+    /* absolute 이전의 position */
+  }
+
+  .nav__menu {
+    display: flex;
+    column-gap: 1rem;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+
+  .nav__close,
+  .nav__toggle,
+  .change-theme-name {
+    display: none;
+  }
+
+  .change-theme {
+    color: var(--white-color);
+  }
+
+  .active-link::before {
+    /* 가상요소 before */
+    background-color: var(--white-color);
+  }
+
+  .scroll-header .nav__link {
+    color: var(--text-color);
+  }
+
+  .scroll-header .active-link {
+    color: var(--title-color);
+  }
+
+  .scroll-header .active-link::before {
+    background-color: var(--title-color);
+  }
+
+  .scroll-header .change-theme {
+    color: var(--text-color);
+  }
+
+  .section {
+    padding: 7rem 0 2rem;
+  }
+  .home__container {
+    grid-template-rows: 1.8fr 0.5fr;
+  }
+  .home__data {
+    align-self: flex-end;
+  }
+  .home__social {
+    flex-direction: row;
+    align-self: flex-end;
+    margin-bottom: 3rem;
+    column-gap: 2.5rem;
+  }
+
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .about__data,
+  .about__title {
+    text-align: initial;
+  }
+  .about__title {
+    margin-bottom: var(--mb-1-5);
+  }
+  .about__description {
+    margin-bottom: var(--mb-2);
+  }
+  .discover__container {
+    width: 610px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .discover__container,
+  .place__container {
+    padding-top: 2rem;
+  }
+  .experience__overlay:nth-child(1) {
+    width: 363px;
+    margin-right: 4rem;
+  }
+  .experience__overlay:nth-child(2) {
+    width: 160px;
+  }
+  .subscribe__bg {
+    background: none;
+    padding: 0;
+  }
+  .subscribe__container {
+    background-color: var(--first-color-second);
+    padding: 3.5rem 0;
+  }
+  .footer__rights {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
