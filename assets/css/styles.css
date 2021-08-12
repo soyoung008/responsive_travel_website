@@ -557,10 +557,6 @@ input {
   padding-bottom: 1rem;
 }
 
-.video__container {
-  padding-bottom: 1rem;
-}
-
 .video__description {
   text-align: center;
   margin-bottom: var(--mb-2-5);
