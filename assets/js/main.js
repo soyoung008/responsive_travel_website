@@ -4,7 +4,6 @@ const navMenu = document.getElementById('nav-menu'),
       navClose = document.getElementById('nav-close')
 
 /*===== MENU SHOW =====*/
-/* Validate if constant exists */
 if(navToggle){
     navToggle.addEventListener('click', () =>{
         navMenu.classList.add('show-menu')
@@ -12,19 +11,17 @@ if(navToggle){
 }
 
 /*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
 if(navClose){
   navClose.addEventListener('click', () =>{
       navMenu.classList.remove('show-menu')
   })
 }
 
-/*==================== REMOVE MENU MOBILE ====================*/
+/*===== REMOVE MENU MOBILE =====*/
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
@@ -153,13 +150,13 @@ themeButton.addEventListener('click', () => {
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
   distance: '60px',
-  duration: 2000,
+  duration: 2500,
   // reset: true,
 })
 
 
 sr.reveal(`.home__data, .home__social-link, .home__info,
-         .section__title,
+          .section__title,
          .discover__container,
          .experience__data, .experience__overlay,
          .place__card,
@@ -169,7 +166,7 @@ sr.reveal(`.home__data, .home__social-link, .home__info,
   // interval: 100,
 })
 
-sr.reveal(`.about__description, 
+sr.reveal(`.about__data,
          .video__description,
          .subscribe__description`,{
   origin: 'left',
