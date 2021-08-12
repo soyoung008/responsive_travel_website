@@ -87,8 +87,8 @@ body.dark-theme {
   align-items: center;
   column-gap: 2rem;
   position: absolute;
-  left: 3rem;
-  bottom: 4rem;
+  right: 3rem;
+  top: 18rem;
 }
 
 .change-theme,
@@ -163,6 +163,7 @@ input {
 
 .main {
   overflow-x: hidden;
+  /* 부모요소의 범위를 넘어가는 자식 요소의 부분은 보이지 않도록 처리한다. */
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -353,7 +354,7 @@ input {
   column-gap: 0.5rem;
   position: absolute;
   right: 0;
-  bottom: 1rem;
+  bottom: 5.5rem;
   width: 228px;
 }
 
@@ -882,6 +883,7 @@ input {
   }
   .nav {
     height: calc(var(--header-height) + 1.5rem);
+    margin-left: var(--mb-2-5);
   }
 
   .nav__link {
@@ -939,6 +941,7 @@ input {
   }
   .home__container {
     grid-template-rows: 1.8fr 0.5fr;
+    margin-left: var(--mb-2-5);
   }
   .home__data {
     align-self: flex-end;
@@ -949,10 +952,14 @@ input {
     margin-bottom: 3rem;
     column-gap: 2.5rem;
   }
+  .home__info {
+    bottom: 3rem;
+  }
 
   .about__container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    margin-left: var(--mb-2-5);
   }
 
   .about__data,
@@ -990,6 +997,9 @@ input {
     background-color: var(--first-color-second);
     padding: 3.5rem 0;
   }
+  .footer__container {
+    margin-left: var(--mb-2-5);
+  }
   .footer__rights {
     flex-direction: row;
     justify-content: space-between;
@@ -1009,6 +1019,7 @@ input {
     width: 328px;
     grid-template-columns: 1fr 2fr;
     column-gap: 2rem;
+    bottom: 3rem;
   }
   .home__info-title {
     font-size: var(--normal-font-size);
