@@ -142,8 +142,8 @@ a {
 
 img,
 video {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 button,
@@ -1088,7 +1088,7 @@ input {
   }
   .home__data-title {
     font-size: 2rem;
-    margin-bottom: var(--mb-1);
+    margin-bottom: var(--mb);
   }
   .home__info {
     bottom: 1rem;
