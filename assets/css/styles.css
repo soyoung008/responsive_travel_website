@@ -1081,6 +1081,19 @@ input {
     max-width: 1080px;
   }
 }
+
+@media screen and (max-height: 721px) {
+  .home__data-subtitle {
+    font-size: var(--smaller-font-size);
+  }
+  .home__data-title {
+    font-size: 2rem;
+    margin-bottom: var(--mb-1);
+  }
+  .home__info {
+    bottom: 1rem;
+  }
+}
 @media screen and (min-height: 721px) {
   .home__container,
   .home__img {
