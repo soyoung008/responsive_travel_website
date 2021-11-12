@@ -9,7 +9,7 @@
 
 
 ### 📎 배포 링크 
-https://devjade.github.io/responsive_travel_website/
+https://devLuenna.github.io/responsive_travel_website/
 
 ### 📎 블로그 링크(코드리뷰) 
 https://bit.ly/3CehVtU
